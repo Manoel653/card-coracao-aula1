@@ -1,1 +1,1 @@
-# card-coracao-aula1
+Card de coração da primeira aula, completamente estilizado e terminado

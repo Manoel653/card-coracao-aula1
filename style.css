@@ -8,14 +8,13 @@
   --radius: 10px;
 }
 
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body  {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--text);
   display: flex;
@@ -23,98 +22,10 @@ body{
   align-items: center;
   min-height: 100vh;
   background-image: url('https://media.tenor.com/XrUYz2Z4k4EAAAAM/stars-shooting-star.gif');
-  background-size: cover;
-  
-  
-  
+  background-size: 600px;
   height: 100vh;
   padding:0;
   margin:0;
-}
-
-.container {
-
-  width: 100%;
-  max-width: 350px;
-  padding: 20px;
-  position: relative;
-}
-
-.card {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: var(--radius);
-  box-shadow: 6px 6px 12px var(--shadow-dark), -3px -3px 5px var(--shadow-light);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-
-}
-
-.card:hover {
-  box-shadow: 6px 6px 12px var(--shadow-dark), -3px -3px 5px var(--shadow-light);
-}
-
-.card:active {
-  transform: translateY(1px);
-  box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -3px -3px 5px var(--shadow-light);
-}
-
-.card-icon {
-  color: var(--shadow-light)
-}
-
-.card:hover .card-icon {
-  transform: scale(1.1) translateZ(30px);
-}
-
-.card h1 {
-  margin-bottom: 15px;
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.cardsub {
-  margin-bottom: 20px;
-
-}
-
-.card-btn {
-  background: var(--card-bg);
-  font-size: 17px;
-  line-height: 2.0;
-  border: none;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 2px 2px 7px var(--shadow-dark);
-  transition: all 0,3s;
-  position: relative;
-  background-color: #cdc2e0b4;
-  border: 1px solid #413359;
-
-}
-
-.card-btn:active {
-  box-shadow: inset 2px 2px 7px var(--shadow-dark);
-  background-color:#a296b8b4;
-}
-
-.card-btn:hover {
-  background-color: #afa5c2b4;
-}
-
-
-.card {
-  animation-duration: 2s;
-  animation-name: fade-in, moveup;
-  animation-iteration-count: 1;
 }
 
 @keyframes fade-in {
@@ -129,12 +40,164 @@ body{
 
 @keyframes moveup {
   0% {
-      transform: translateY(4vh);
-    }
-    100% {
-      transform: translateY(0);
-    }
+    transform: translateY(2vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.2);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heartbeat2 {
+  0% {
+    transform: scale(1.2);
+  }
+  14% {
+    transform: scale(1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  position: relative;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: 6px 6px 12px var(--shadow-dark), -3px -3px 5px var(--shadow-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation-name: fade-in, moveup;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 12px var(--shadow-dark), -3px -3px 5px var(--shadow-light);
+}
+
+.card:active {
+  transform: translateY(1px);
+  box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -3px -3px 5px var(--shadow-light);
+}
+
+.card-icon3 {
+  color: var(--text);
+  display: inline-block;
+  animation: heartbeat2 2s infinite;
+  transition: color 0.7s ease;
+  transform-origin: center;
+  margin-left: 130px;
+  margin-bottom: 10px;
+  margin-top: -53px;
+}
+
+.card-icon2 {
+  color: var(--text);
+  display: inline-block;
+  animation: heartbeat2 2s infinite;
+  transition: color 0.7s ease;
+  transform-origin: center;
+  margin-right: 130px;
+  margin-bottom: 10px;
+  margin-top: -53px;
+}
+
+.card-icon {
+  color: var(--text);
+  display: inline-block;
+  animation: heartbeat 2s infinite;
+  transition: color 0.7s ease;
+  transform-origin: center;
+  margin-bottom: 10px;
+}
+
+.card-icon:hover, .card-icon2:hover, .card-icon3:hover {
+  color: var(--shadow-light);
+}
+
+.card h1 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.cardsub {
+  margin-bottom: 30px;
+}
+
+.card-btn {
+  cursor: pointer;
+  background: var(--card-bg);
+  font-size: 17px;
+  line-height: 2.0;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 2px 2px 7px var(--shadow-dark);
+  transition: all 0,3s;
+  position: relative;
+  background-color: #cdc2e0b4;
+  color: (var(--shadow-dark));
+}
+
+.card-btn:active {
+  box-shadow: inset 2px 2px 7px var(--shadow-dark);
+  background-color:#a296b8b4;
+}
+
+.card-btn:hover {
+  background-color: #afa5c2b4;
+}
+
+.card {
+  animation-duration: 2s;
+  animation-name: fade-in, moveup;
+  animation-iteration-count: 1;
+}
+
 
 
 
